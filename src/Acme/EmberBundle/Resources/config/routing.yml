@@ -1,0 +1,8 @@
+acme_ember_homepage:
+    pattern:     /{url}
+    defaults:
+        url: null
+        _controller: FrameworkBundle:Template:template
+        template:     'AcmeEmberBundle::layout.html.twig'
+    requirements:
+        url: ".+"

@@ -1,0 +1,12 @@
+<h1>Product: {{id}}</h1>
+
+<p>{{name}}</p>
+<p>{{description}}</p>
+<p>{{category.name}}</p>
+
+{{#if isEditing}}
+  {{partial 'product/edit'}}
+  <button {{action 'doneEditing'}}>Done</button>
+{{else}}
+  <button {{action 'edit'}}>Edit</button>
+{{/if}}

@@ -1,0 +1,20 @@
+# src/Acme/ApiBundle/Resources/config/validation.yml
+Acme\ApiBundle\Entity\Product:
+    properties:
+        name:
+            - NotBlank: ~
+            - NotNull: ~
+        price:
+            - NotBlank: ~
+            - NotNull: ~
+        description:
+            - NotBlank: ~
+            - NotNull: ~
+        category:
+            - NotBlank: ~
+            - NotNull: ~
+Acme\ApiBundle\Entity\Category:
+    properties:
+        name:
+            - NotBlank: ~
+            - NotNull: ~

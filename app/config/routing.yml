@@ -1,0 +1,15 @@
+acme_api_api:
+    type: rest
+    prefix: /api
+    resource: "@AcmeApiBundle/Resources/config/routing.yml"
+
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+acme_ember_frontend:
+    resource: "@AcmeEmberBundle/Resources/config/routing.yml"
+    prefix:   /
