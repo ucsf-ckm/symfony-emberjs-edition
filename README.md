@@ -41,7 +41,7 @@ http://getcomposer.org/ or just run the following command:
 
 Then, use the `create-project` command to generate a new Symfony application:
 
-    php composer.phar create-project ucsf-ckm/symfony-emberjs-edition path/to/install
+    php composer.phar create-project -s dev ucsf-ckm/symfony-emberjs-edition path/to/install
 
 Composer will install Symfony and all its dependencies under the
 `path/to/install` directory.
