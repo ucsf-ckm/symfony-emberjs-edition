@@ -1,17 +1,17 @@
-Symfony Standard Edition
+Symfony EmberJS Edition
 ========================
 
-Welcome to the Symfony Standard Edition - a fully-functional Symfony2
+Welcome to the Symfony EmberJS Edition - a fully-functional Symfony2
 application that you can use as the skeleton for your new applications.
 
 This document contains information on how to download, install, and start
 using Symfony. For a more detailed explanation, see the [Installation][1]
 chapter of the Symfony Documentation.
 
-1) Installing the Standard Edition
+1) Installing the EmberJS Edition
 ----------------------------------
 
-When it comes to installing the Symfony Standard Edition, you have the
+When it comes to installing the Symfony EmberJS Edition, you have the
 following options.
 
 ### Use Composer (*recommended*)
@@ -26,14 +26,14 @@ http://getcomposer.org/ or just run the following command:
 
 Then, use the `create-project` command to generate a new Symfony application:
 
-    php composer.phar create-project symfony/framework-standard-edition path/to/install
+    php composer.phar create-project ucsf-ckm/symfony-emberjs-edition path/to/install
 
 Composer will install Symfony and all its dependencies under the
 `path/to/install` directory.
 
 ### Download an Archive File
 
-To quickly test Symfony, you can also download an [archive][3] of the Standard
+To quickly test Symfony, you can also download an [archive][3] of the EmberJS
 Edition and unpack it somewhere under your web server root directory.
 
 If you downloaded an archive "without vendors", you also need to install all
@@ -74,39 +74,13 @@ Symfony Application online" link of the `config.php` page.
 
 To see a real-live Symfony page in action, access the following page:
 
-    web/app_dev.php/demo/hello/Fabien
+    web/app_dev.php/
 
-4) Getting started with Symfony
--------------------------------
-
-This distribution is meant to be the starting point for your Symfony
-applications, but it also contains some sample code that you can learn from
-and play with.
-
-A great way to start learning Symfony is via the [Quick Tour][4], which will
-take you through all the basic features of Symfony2.
-
-Once you're feeling good, you can move onto reading the official
-[Symfony2 book][5].
-
-A default bundle, `AcmeDemoBundle`, shows you Symfony2 in action. After
-playing with it, you can remove it by following these steps:
-
-  * delete the `src/Acme` directory;
-
-  * remove the routing entry referencing AcmeDemoBundle in `app/config/routing_dev.yml`;
-
-  * remove the AcmeDemoBundle from the registered bundles in `app/AppKernel.php`;
-
-  * remove the `web/bundles/acmedemo` directory;
-
-  * empty the `security.yml` file or tweak the security configuration to fit
-    your needs.
 
 What's inside?
 ---------------
 
-The Symfony Standard Edition is configured with the following defaults:
+The Symfony EmberJS Edition is configured with the following defaults:
 
   * Twig is the only configured template engine;
 
@@ -115,6 +89,12 @@ The Symfony Standard Edition is configured with the following defaults:
   * Swiftmailer is configured;
 
   * Annotations for everything are enabled.
+
+  * FOSRest is configured
+
+  * Bower is configured
+
+  * Assetic with ember-precompile is configured
 
 It comes pre-configured with the following bundles:
 
@@ -147,10 +127,21 @@ It comes pre-configured with the following bundles:
   * [**SensioGeneratorBundle**][13] (in dev/test env) - Adds code generation
     capabilities
 
-  * **AcmeDemoBundle** (in dev/test env) - A demo bundle with some example
-    code
+  * [**FOSRestBundle**][14] - Adds suport for rest API
 
-All libraries and bundles included in the Symfony Standard Edition are
+  * [**NelmioApiDocBundle**][15] - Generates API Docs
+
+  * [**FOSJsRoutingBundle**][16] - Exposes routes in javascript
+
+  * [**SpBowerBundle**][17] - Downloads bower dependencies
+
+  * **AcmeApiBundle** (in dev/test env) - A demo bundle with example code for building
+  an EmberJS friendly API
+
+  * **AcmeEmberBundle** (in dev/test env) - A demo bundle with example code for organizing and
+  EmberJS application
+
+All libraries and bundles included in the Symfony EmberJS Edition are
 released under the MIT or BSD license.
 
 Enjoy!
@@ -168,3 +159,7 @@ Enjoy!
 [11]: http://symfony.com/doc/2.4/cookbook/logging/monolog.html
 [12]: http://symfony.com/doc/2.4/cookbook/assetic/asset_management.html
 [13]: http://symfony.com/doc/2.4/bundles/SensioGeneratorBundle/index.html
+[14]: https://github.com/FriendsOfSymfony/FOSRestBundle
+[15]: https://github.com/nelmio/NelmioApiDocBundle
+[16]: https://github.com/FriendsOfSymfony/FOSJsRoutingBundle
+[17]: https://github.com/Spea/SpBowerBundle
