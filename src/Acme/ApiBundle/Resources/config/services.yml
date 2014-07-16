@@ -1,0 +1,13 @@
+parameters:
+    acme_api.product_handler.class:  Acme\ApiBundle\Handler\ProductHandler
+    acme_api.product_entity.class:   Acme\ApiBundle\Entity\Product
+    acme_api.category_handler.class:  Acme\ApiBundle\Handler\CategoryHandler
+    acme_api.category_entity.class:   Acme\ApiBundle\Entity\Category
+
+services:
+    acme_api.product_handler:
+        class:        %acme_api.product_handler.class%
+        arguments:    [@doctrine.orm.entity_manager,%acme_api.product_entity.class%, @form.factory]
+    acme_api.category_handler:
+        class:        %acme_api.category_handler.class%
+        arguments:    [@doctrine.orm.entity_manager,%acme_api.category_entity.class%, @form.factory]

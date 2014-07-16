@@ -1,8 +1,8 @@
 {
-    "name": "symfony/framework-standard-edition",
+    "name": "ucsf-ckm/symfony-emberjs-edition",
     "license": "MIT",
     "type": "project",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "description": "The \"Symfony EmberJS Edition\" distribution",
     "autoload": {
         "psr-0": { "": "src/", "SymfonyStandard": "app/" }
     },
@@ -17,10 +17,19 @@
         "symfony/monolog-bundle": "~2.4",
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~3.0",
-        "incenteev/composer-parameter-handler": "~2.0"
+        "incenteev/composer-parameter-handler": "~2.0",
+        "friendsofsymfony/rest-bundle": "1.4.*",
+        "jms/serializer-bundle": "0.13.*",
+        "nelmio/api-doc-bundle": "2.*",
+        "friendsofsymfony/jsrouting-bundle": "~1.5",
+        "sp/bower-bundle": "dev-master"
     },
     "require-dev": {
-        "sensio/generator-bundle": "~2.3"
+        "sensio/generator-bundle": "~2.3",
+        "phpunit/phpunit": "@stable",
+        "liip/functional-test-bundle": "@stable",
+        "doctrine/doctrine-fixtures-bundle": "@stable",
+        "lmammino/jsmin4assetic": "@stable"
     },
     "scripts": {
         "post-root-package-install": [
@@ -32,7 +41,8 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles"
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles",
+            "Sp\\BowerBundle\\Composer\\ScriptHandler::bowerInstall"
         ],
         "post-update-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
@@ -40,7 +50,8 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles"
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles",
+            "Sp\\BowerBundle\\Composer\\ScriptHandler::bowerInstall"
         ]
     },
     "config": {

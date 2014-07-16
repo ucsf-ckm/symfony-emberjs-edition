@@ -1,0 +1,8 @@
+Acme\ApiBundle\Entity\Category:
+    exclusion_policy: ALL
+    xml_root_name: categories
+    properties:
+        id:
+            expose: true
+        name:
+            expose: true

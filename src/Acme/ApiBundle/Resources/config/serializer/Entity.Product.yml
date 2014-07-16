@@ -1,0 +1,16 @@
+Acme\ApiBundle\Entity\Product:
+    exclusion_policy: ALL
+    xml_root_name: product
+    properties:
+        id:
+            expose: true
+        name:
+            expose: true
+        description:
+            expose: true
+        price:
+            expose: true
+    virtual_properties:
+        getCategoryId:
+            serialized_name: category
+            type: integer

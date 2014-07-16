@@ -1,0 +1,20 @@
+acme_api_apiinfo:
+    path: /v1
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    'AcmeApiBundle::apiinfo.html.twig'
+        _format: 'html'
+    options:
+        expose: true
+
+acme_api_product:
+    type: rest
+    prefix: /v1
+    resource: "Acme\\ApiBundle\\Controller\\ProductController"
+    name_prefix:  api_1_
+
+acme_api_category:
+    type: rest
+    prefix: /v1
+    resource: "Acme\\ApiBundle\\Controller\\CategoryController"
+    name_prefix:  api_1_

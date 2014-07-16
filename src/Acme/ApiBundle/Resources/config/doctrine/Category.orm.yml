@@ -1,0 +1,16 @@
+# src/Acme/ApiBundle/Resources/config/doctrine/Product.orm.yml
+Acme\ApiBundle\Entity\Category:
+    type: entity
+    table: category
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 100
+    oneToMany:
+        products:
+            targetEntity: Category
+            mappedBy: category

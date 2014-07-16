@@ -1,0 +1,11 @@
+fos_rest:
+    body_listener: true
+    format_listener:
+        rules:
+          - { path: '^/', priorities: ['html','json','xml'], fallback_format: html, prefer_extension: true }
+    exception:
+        codes:
+            'Symfony\Component\Routing\Exception\ResourceNotFoundException': 404
+
+twig:
+    exception_controller: 'FOS\RestBundle\Controller\ExceptionController::showAction'
