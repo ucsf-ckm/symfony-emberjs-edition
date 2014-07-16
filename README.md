@@ -4,11 +4,26 @@ Symfony EmberJS Edition
 Welcome to the Symfony EmberJS Edition - a fully-functional Symfony2
 application that you can use as the skeleton for your new applications.
 
+It owes a lot to:
+[FOSRestBundle][14]
+
+http://williamdurand.fr/2012/08/02/rest-apis-with-symfony2-the-right-way/
+
+http://welcometothebundle.com/symfony2-rest-api-the-best-2013-way/
+
 This document contains information on how to download, install, and start
 using Symfony. For a more detailed explanation, see the [Installation][1]
 chapter of the Symfony Documentation.
 
-1) Installing the EmberJS Edition
+
+
+1) Installing Dependencies
+----------------------------------
+
+npm install -g ember-precompile
+
+
+2) Installing the EmberJS Edition
 ----------------------------------
 
 When it comes to installing the Symfony EmberJS Edition, you have the
@@ -42,7 +57,7 @@ following command:
 
     php composer.phar install
 
-2) Checking your System Configuration
+3) Checking your System Configuration
 -------------------------------------
 
 Before starting coding, make sure that your local system is properly
@@ -61,7 +76,7 @@ Access the `config.php` script from a browser:
 
 If you get any warnings or recommendations, fix them before moving on.
 
-3) Browsing the Demo Application
+4) Browsing the Demo Application
 --------------------------------
 
 Congratulations! You're now ready to use Symfony.
