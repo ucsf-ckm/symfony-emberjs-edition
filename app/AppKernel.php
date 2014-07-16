@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new Sp\BowerBundle\SpBowerBundle(),
             new Acme\ApiBundle\AcmeApiBundle(),
+            new Acme\EmberBundle\AcmeEmberBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

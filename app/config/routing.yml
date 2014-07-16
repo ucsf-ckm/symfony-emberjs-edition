@@ -9,3 +9,7 @@ NelmioApiDocBundle:
 
 fos_js_routing:
     resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+acme_ember_frontend:
+    resource: "@AcmeEmberBundle/Resources/config/routing.yml"
+    prefix:   /

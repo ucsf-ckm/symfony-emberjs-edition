@@ -1,0 +1,8 @@
+<h1>Categories:</h1>
+<ul>
+{{#each controller}}
+  <li>{{#link-to 'category' this}}{{name}}{{/link-to}}</li>
+{{/each}}
+</ul>
+
+{{outlet}}

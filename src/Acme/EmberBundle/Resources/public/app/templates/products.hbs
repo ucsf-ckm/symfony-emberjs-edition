@@ -1,0 +1,10 @@
+<h1>Products:</h1>
+{{input type="text" id="new-product" placeholder="New Product Name"
+              value=newName action="createProduct"}}
+<ul>
+{{#each controller}}
+  <li>{{#link-to 'product' this.id}}{{name}}{{/link-to}}</li>
+{{/each}}
+</ul>
+
+{{outlet}}
