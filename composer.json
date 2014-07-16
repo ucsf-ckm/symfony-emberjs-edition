@@ -55,6 +55,7 @@
     "config": {
         "bin-dir": "bin"
     },
+    "minimum-stability": "stable",
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
@@ -62,7 +63,7 @@
             "file": "app/config/parameters.yml"
         },
         "branch-alias": {
-            "dev-master": "2.6-dev"
+            "dev-master": "2.3-dev"
         }
     }
 }
