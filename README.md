@@ -81,15 +81,29 @@ If you get any warnings or recommendations, fix them before moving on.
 
 Congratulations! You're now ready to use Symfony.
 
-From the `config.php` page, click the "Bypass configuration and go to the
-Welcome page" link to load up your first Symfony page.
-
-You can also use a web-based configurator by clicking on the "Configure your
+From the `config.php` page click on the "Configure your
 Symfony Application online" link of the `config.php` page.
 
-To see a real-live Symfony page in action, access the following page:
+Setup your database connection - use sqlite for a fast demo.
+
+Creae the database schema and add some sample data:
+
+    php app/console doctrine:schema:create --env=dev
+    php app/console doctrine:fixtures:load --env=dev
+
+To see a real-live EmberJS in Symfony page in action, access the following page:
 
     web/app_dev.php/
+    
+To browse your new API documentation visit:
+
+    web/app_dev.php/api/doc/
+    
+And to see the API in action
+
+    web/app_dev.php/api/v1/products
+    web/app_dev.php/api/v1/products/1.json
+    web/app_dev.php/api/v1/products/1.xml
 
 
 What's inside?
