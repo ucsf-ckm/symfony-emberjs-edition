@@ -86,7 +86,7 @@ Symfony Application online" link of the `config.php` page.
 
 Setup your database connection - use sqlite for a fast demo.
 
-Creae the database schema and add some sample data:
+Create the database schema and add some sample data:
 
     php app/console doctrine:schema:create --env=dev
     php app/console doctrine:fixtures:load --env=dev
@@ -160,7 +160,7 @@ It comes pre-configured with the following bundles:
 
   * [**NelmioApiDocBundle**][15] - Generates API Docs
 
-  * [**FOSJsRoutingBundle**][16] - Exposes routes in javascript
+  * [**FOSJsRoutingBundle**][16] - Exposes routes in JavaScript
 
   * [**SpBowerBundle**][17] - Downloads bower dependencies
 
