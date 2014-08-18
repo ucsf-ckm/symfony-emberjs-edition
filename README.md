@@ -20,6 +20,7 @@ chapter of the Symfony Documentation.
 1) Installing Dependencies
 ----------------------------------
 
+npm install -g bower
 npm install -g ember-precompile
 
 
@@ -94,11 +95,11 @@ Create the database schema and add some sample data:
 To see a real-live EmberJS in Symfony page in action, access the following page:
 
     web/app_dev.php/
-    
+
 To browse your new API documentation visit:
 
     web/app_dev.php/api/doc/
-    
+
 And to see the API in action
 
     web/app_dev.php/api/v1/products
