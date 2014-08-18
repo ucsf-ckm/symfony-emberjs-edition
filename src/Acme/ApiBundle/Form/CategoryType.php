@@ -8,7 +8,9 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class CategoryType extends AbstractType
 {
-        /**
+  const NAME = 'category';
+
+    /**
      * @param FormBuilderInterface $builder
      * @param array $options
      */
@@ -18,7 +20,7 @@ class CategoryType extends AbstractType
             ->add('name')
         ;
     }
-    
+
     /**
      * @param OptionsResolverInterface $resolver
      */
@@ -35,6 +37,6 @@ class CategoryType extends AbstractType
      */
     public function getName()
     {
-        return 'category';
+        return self::NAME;
     }
 }

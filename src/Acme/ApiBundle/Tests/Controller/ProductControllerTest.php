@@ -8,7 +8,7 @@ use Acme\ApiBundle\Form\ProductType;
 class ProductControllerTest extends ApiTestCase
 {
 
-    public function testJsonGetObjectiveAction()
+    public function testJsonGetProductAction()
     {
         $this->loadFixtures(
             array(
@@ -20,10 +20,10 @@ class ProductControllerTest extends ApiTestCase
             'GET',
             $this->getUrl('api_1_get_product', array('id' => 1))
         );
-        
+
         $response = $client->getResponse();
         $this->assertJsonResponse($response, 200);
-        
+
         $content = $response->getContent();
         $decoded = json_decode($content, true);
         $this->assertTrue(isset($decoded['product']['id']), $content);
@@ -31,7 +31,7 @@ class ProductControllerTest extends ApiTestCase
         $this->assertEquals('First Product', $decoded['product']['name'], $content);
     }
 
-    public function testJsonGetObjectivesAction()
+    public function testJsonGetProductsAction()
     {
         $this->loadFixtures(
             array(
@@ -39,18 +39,18 @@ class ProductControllerTest extends ApiTestCase
                 'Acme\ApiBundle\DataFixtures\ORM\LoadProductData'
             )
         );
-        
+
         $client = $this->createJsonRequest(
             'GET',
             $this->getUrl('api_1_get_products')
         );
-        
+
         $response = $client->getResponse();
         $this->assertJsonResponse($response, 200);
-        
+
         $content = $response->getContent();
         $decoded = json_decode($content, true);
-        
+
         $this->assertTrue(isset($decoded['products']));
         $this->assertTrue(count($decoded['products']) == 2);
 
@@ -61,7 +61,7 @@ class ProductControllerTest extends ApiTestCase
         $this->assertEquals('Second Product', $decoded['products'][1]['name']);
     }
 
-    public function testJsonPostObjectiveAction()
+    public function testJsonPostProductAction()
     {
         $client = $this->createJsonRequest(
             'POST',
@@ -72,7 +72,7 @@ class ProductControllerTest extends ApiTestCase
         $this->assertJsonResponse($client->getResponse(), 201);
     }
 
-    public function testJsonPostObjectiveActionWithBadParameters()
+    public function testJsonPostProductActionWithBadParameters()
     {
         $client = $this->createJsonRequest(
             'POST',
@@ -80,7 +80,7 @@ class ProductControllerTest extends ApiTestCase
             $this->createJsonProduct('', '', '', '')
         );
         $this->assertJsonResponse($client->getResponse(), 400);
-        
+
         $client = $this->createJsonRequest(
             'POST',
             $this->getUrl('api_1_post_product'),
@@ -98,7 +98,7 @@ class ProductControllerTest extends ApiTestCase
         $this->assertJsonResponse($client->getResponse(), 404);
     }
 
-    public function testJsonPutObjectiveActionShouldModify()
+    public function testJsonPutProductActionShouldModify()
     {
         $this->loadFixtures(
             array(
@@ -106,7 +106,7 @@ class ProductControllerTest extends ApiTestCase
                 'Acme\ApiBundle\DataFixtures\ORM\LoadProductData'
             )
         );
-        
+
         $client = $this->createJsonRequest(
             'PUT',
             $this->getUrl('api_1_put_product', array('id' => 1)),
@@ -120,7 +120,7 @@ class ProductControllerTest extends ApiTestCase
         $this->assertEquals('new name', $decoded['product']['name']);
     }
 
-    public function testJsonPutObjectiveActionShouldCreate()
+    public function testJsonPutProductActionShouldCreate()
     {
         $this->loadFixtures(
             array(
@@ -142,19 +142,19 @@ class ProductControllerTest extends ApiTestCase
         $this->assertTrue(isset($decoded['product']));
         $this->assertEquals('new product', $decoded['product']['name']);
     }
-    
+
     /**
      * Create a nicely formatted json product
-     * 
+     *
      * @param string $name
      * @param string $description
      * @param string $price
-     * 
+     *
      * @return string
      */
     protected function createJsonProduct($name, $description, $price, $category)
     {
-        $arr = array(ProductType::NAME => 
+        $arr = array(ProductType::NAME =>
             array(
                 'name' => $name,
                 'description' => $description,
@@ -162,7 +162,7 @@ class ProductControllerTest extends ApiTestCase
                 'category' => $category
             )
         );
-        
+
         return json_encode($arr);
     }
 }
