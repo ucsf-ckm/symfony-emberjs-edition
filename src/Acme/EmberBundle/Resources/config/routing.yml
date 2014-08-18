@@ -5,4 +5,4 @@ acme_ember_homepage:
         _controller: FrameworkBundle:Template:template
         template:     'AcmeEmberBundle::layout.html.twig'
     requirements:
-        url: ".+"
+        url: "^(?!api).+"
