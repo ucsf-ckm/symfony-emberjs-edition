@@ -28,6 +28,7 @@
     "require-dev": {
         "sensio/generator-bundle": "~2.3",
         "phpunit/phpunit": "@stable",
+        "squizlabs/php_codesniffer": "@stable",
         "liip/functional-test-bundle": "@stable",
         "doctrine/doctrine-fixtures-bundle": "@stable",
         "lmammino/jsmin4assetic": "@stable"

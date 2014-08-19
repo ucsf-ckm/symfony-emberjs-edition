@@ -9,11 +9,11 @@ class ApiTestCase extends WebTestCase
 
     /**
      * Create a JSON request
-     * 
+     *
      * @param string $method
      * @param string $url
      * @param string $content
-     * 
+     *
      * @return Symfony\Bundle\FrameworkBundle\Client
      */
     public function createJsonRequest($method, $url, $content = null)
