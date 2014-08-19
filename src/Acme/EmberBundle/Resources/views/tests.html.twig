@@ -28,11 +28,16 @@
         <div id="ember-testing"></div>
       </div>
       {% javascripts output='test-app.js'
-          '@AcmeEmberBundle/Resources/public/tests/tests.js'
+          '@AcmeEmberBundle/Resources/public/tests/app.js'
           '@AcmeEmberBundle/Resources/public/app/router.js'
           '@AcmeEmberBundle/Resources/public/app/routes/*.js'
           '@AcmeEmberBundle/Resources/public/app/models/*.js'
           '@AcmeEmberBundle/Resources/public/app/controllers/*.js'
+          %}
+          <script type="text/javascript" src="{{ asset_url }}"></script>
+      {% endjavascripts %}
+      {% javascripts filter='emberprecompile' output='hbs.js'
+          '@AcmeEmberBundle/Resources/public/app/templates/*.hbs'
           %}
           <script type="text/javascript" src="{{ asset_url }}"></script>
       {% endjavascripts %}
@@ -41,6 +46,7 @@
           '@AcmeEmberBundle/Resources/public/tests/controllers/*.js'
           '@AcmeEmberBundle/Resources/public/tests/models/*.js'
           '@AcmeEmberBundle/Resources/public/tests/routes/*.js'
+          '@AcmeEmberBundle/Resources/public/tests/acceptance/*.js'
           %}
           <script type="text/javascript" src="{{ asset_url }}"></script>
       {% endjavascripts %}
