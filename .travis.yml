@@ -1,0 +1,25 @@
+language: php
+
+matrix:
+  fast_finish: true
+
+php:
+  - "5.3"
+  - "5.4"
+  - "5.5"
+
+install:
+  # Install composer packages in the app root. This will set up phing.
+  - npm install -g bower
+  - composer install  --no-interaction -d ${TRAVIS_BUILD_DIR}
+  - cp ${TRAVIS_BUILD_DIR}/app/config/parameters.yml.travis ${TRAVIS_BUILD_DIR}/app/config/parameters.yml
+
+before_script:
+#initialize symfony test db
+  - cd ${TRAVIS_BUILD_DIR}; app/console doctrine:database:create --env=test
+  - cd ${TRAVIS_BUILD_DIR}; app/console doctrine:schema:create --env=test
+
+script:
+  # Run Ilios 3 tests
+  - cd ${TRAVIS_BUILD_DIR}; bin/phpunit -c app/phpunit.xml.dist
+  - cd ${TRAVIS_BUILD_DIR}; bin/phpcs --standard=app/phpcs.xml src
