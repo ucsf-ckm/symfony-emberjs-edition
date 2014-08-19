@@ -28,7 +28,7 @@
         <div id="ember-testing"></div>
       </div>
       {% javascripts output='test-app.js'
-          '@AcmeEmberBundle/Resources/public/tests/app.js'
+          '@AcmeEmberBundle/Resources/public/tests/helpers/qunit-start.js'
           '@AcmeEmberBundle/Resources/public/app/router.js'
           '@AcmeEmberBundle/Resources/public/app/routes/*.js'
           '@AcmeEmberBundle/Resources/public/app/models/*.js'
@@ -42,7 +42,6 @@
           <script type="text/javascript" src="{{ asset_url }}"></script>
       {% endjavascripts %}
       {% javascripts output='tests.js'
-          '@AcmeEmberBundle/Resources/public/tests/helpers/*.js'
           '@AcmeEmberBundle/Resources/public/tests/controllers/*.js'
           '@AcmeEmberBundle/Resources/public/tests/models/*.js'
           '@AcmeEmberBundle/Resources/public/tests/routes/*.js'
