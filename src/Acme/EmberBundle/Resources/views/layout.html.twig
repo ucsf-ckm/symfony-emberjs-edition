@@ -16,8 +16,10 @@
             {% endjavascripts %}
 
             {% javascripts filter='?jsmin' output='app.js'
-                '@AcmeEmberBundle/Resources/public/app/app.js'
+                '@AcmeEmberBundle/Resources/public/app/*.js'
                 '@AcmeEmberBundle/Resources/public/app/routes/*.js'
+                '@AcmeEmberBundle/Resources/public/app/models/*.js'
+                '@AcmeEmberBundle/Resources/public/app/controllers/*.js'
                 %}
                 <script type="text/javascript" src="{{ asset_url }}"></script>
             {% endjavascripts %}

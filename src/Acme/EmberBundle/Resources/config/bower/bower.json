@@ -5,6 +5,8 @@
     "handlebars": "1.3.0",
     "jquery": "1.11.1",
     "ember": "1.5.1",
-    "ember-data": "v1.0.0-beta.8"
+    "ember-data": "v1.0.0-beta.8",
+    "qunit": "v1.14.0",
+    "ember-qunit": "v0.1.8"
   }
 }
