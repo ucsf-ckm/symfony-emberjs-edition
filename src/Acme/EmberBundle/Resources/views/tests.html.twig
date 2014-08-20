@@ -1,0 +1,53 @@
+{# /Acme/EmberBundle/Resources/views/tests.html.twig #}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        {% stylesheets filter="cssrewrite"
+            '@qunit_css'
+        %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+        <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+        <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+        {% javascripts output='common.js'
+            '@jquery_js'
+            '@handlebars_js'
+            '@ember_js'
+            '@ember_data_js'
+            '@qunit_js'
+            '@AcmeEmberBundle/Resources/public/components/ember-qunit/dist/globals/main.js'
+            %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    </head>
+    <body>
+      <div id="qunit"></div>
+      <div id="qunit-fixture"></div>
+      <div id="ember-testing-container">
+        <div id="ember-testing"></div>
+      </div>
+      {% javascripts output='test-app.js'
+          '@AcmeEmberBundle/Resources/public/tests/helpers/qunit-start.js'
+          '@AcmeEmberBundle/Resources/public/app/router.js'
+          '@AcmeEmberBundle/Resources/public/app/routes/*.js'
+          '@AcmeEmberBundle/Resources/public/app/models/*.js'
+          '@AcmeEmberBundle/Resources/public/app/controllers/*.js'
+          %}
+          <script type="text/javascript" src="{{ asset_url }}"></script>
+      {% endjavascripts %}
+      {% javascripts filter='emberprecompile' output='hbs.js'
+          '@AcmeEmberBundle/Resources/public/app/templates/*.hbs'
+          %}
+          <script type="text/javascript" src="{{ asset_url }}"></script>
+      {% endjavascripts %}
+      {% javascripts output='tests.js'
+          '@AcmeEmberBundle/Resources/public/tests/controllers/*.js'
+          '@AcmeEmberBundle/Resources/public/tests/models/*.js'
+          '@AcmeEmberBundle/Resources/public/tests/routes/*.js'
+          '@AcmeEmberBundle/Resources/public/tests/acceptance/*.js'
+          %}
+          <script type="text/javascript" src="{{ asset_url }}"></script>
+      {% endjavascripts %}
+    </body>
+</html>

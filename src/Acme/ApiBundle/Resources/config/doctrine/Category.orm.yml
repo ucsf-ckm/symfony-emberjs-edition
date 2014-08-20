@@ -12,5 +12,5 @@ Acme\ApiBundle\Entity\Category:
             length: 100
     oneToMany:
         products:
-            targetEntity: Category
+            targetEntity: Product
             mappedBy: category

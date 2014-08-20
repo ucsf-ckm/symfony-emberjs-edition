@@ -16,8 +16,10 @@
             {% endjavascripts %}
 
             {% javascripts filter='?jsmin' output='app.js'
-                '@AcmeEmberBundle/Resources/public/app/app.js'
+                '@AcmeEmberBundle/Resources/public/app/*.js'
                 '@AcmeEmberBundle/Resources/public/app/routes/*.js'
+                '@AcmeEmberBundle/Resources/public/app/models/*.js'
+                '@AcmeEmberBundle/Resources/public/app/controllers/*.js'
                 %}
                 <script type="text/javascript" src="{{ asset_url }}"></script>
             {% endjavascripts %}
@@ -31,11 +33,5 @@
         {% endblock %}
     </head>
     <body>
-        <script type="text/x-handlebars">
-            {% raw %}{{#link-to "index"}}Home{{/link-to}}{% endraw %}
-            {% raw %}{{#link-to "categories"}}Categories{{/link-to}}{% endraw %}
-            {% raw %}{{#link-to "products"}}Products{{/link-to}}{% endraw %}
-            {% raw %} {{outlet}} {% endraw %}
-        </script>
     </body>
 </html>

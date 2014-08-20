@@ -1,3 +1,9 @@
+acme_ember_tests:
+  pattern:     /tests.html
+  defaults:
+    _controller: FrameworkBundle:Template:template
+    template:     'AcmeEmberBundle::tests.html.twig'
+
 acme_ember_homepage:
     pattern:     /{url}
     defaults:
@@ -5,4 +11,4 @@ acme_ember_homepage:
         _controller: FrameworkBundle:Template:template
         template:     'AcmeEmberBundle::layout.html.twig'
     requirements:
-        url: ".+"
+        url: "^(?!api).+"

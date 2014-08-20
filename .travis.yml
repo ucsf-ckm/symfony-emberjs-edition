@@ -1,0 +1,32 @@
+language: php
+
+matrix:
+  fast_finish: true
+
+php:
+  - "5.3"
+  - "5.4"
+  - "5.5"
+
+env:
+  global:
+  - secure: "eWv3E42672u35HdD4rSzbTXCKz4Q5XTRwOpRwktFsgmsTXmg06img2CqQ7oEBgRS/GhV21qlDIDdc6oHgd0jukySg75BF/ir2V3gm+0k4jpQEgvoN70h5hHBGe5LafQ7IL7cY/eU0rYSSLjGS2vitsRNTMCGEBEGNThBFdawk8Q="
+  - secure: "T8ROXU/eySYJ7Kyw0mHgKxEVpfgWstvo983lVrdAlRdAV7JXQQmw944pvOz8nNxh0RsvrXPxAk4loW2T4Qc0cSqevgInhB83U25JA+XOR+aD+TlY8YAKhsxKf4NqXkdpG+cFrc9vVtocp/p7qCZ7bGROz/Ubc00Qpef+o8yuO0E="
+
+install:
+  # Install composer packages in the app root. This will set up phing.
+  - npm install -g bower
+  - cd ${TRAVIS_BUILD_DIR}; npm install
+  - composer install  --no-interaction -d ${TRAVIS_BUILD_DIR}
+  - cp ${TRAVIS_BUILD_DIR}/app/config/parameters.yml.travis ${TRAVIS_BUILD_DIR}/app/config/parameters.yml
+
+before_script:
+#initialize symfony test db
+  - cd ${TRAVIS_BUILD_DIR}; app/console doctrine:database:create --env=test
+  - cd ${TRAVIS_BUILD_DIR}; app/console doctrine:schema:create --env=test
+
+script:
+  # Run Ilios 3 tests
+  - cd ${TRAVIS_BUILD_DIR}; bin/phpunit -c app/phpunit.xml.dist
+  - cd ${TRAVIS_BUILD_DIR}; bin/phpcs --standard=app/phpcs.xml src
+  - cd ${TRAVIS_BUILD_DIR}; node_modules/karma/bin/karma start src/Acme/EmberBundle/Resources/config/karma/karma-ci.conf.js

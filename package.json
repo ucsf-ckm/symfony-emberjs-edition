@@ -1,0 +1,12 @@
+{
+  "name": "symfony_ember_js",
+  "private": true,
+  "devDependencies": {
+    "bower": "*",
+    "karma-qunit": "*",
+    "karma-phantomjs-launcher": "*",
+    "karma-ember-preprocessor":  "*",
+    "karma": "*",
+    "karma-sauce-launcher": "*"
+  }
+}
