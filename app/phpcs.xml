@@ -2,5 +2,6 @@
 <ruleset name="Symfony EmberJS Edition">
  <description>Use PSR2, exclde some directories</description>
  <rule ref="PSR2"/>
-  <exclude-pattern>*/Acme/EmberBundle/Resources/public</exclude-pattern> 
+  <exclude-pattern>*/Acme/EmberBundle/Resources/public</exclude-pattern>
+  <exclude-pattern>*/Acme/DemoBundle</exclude-pattern> 
 </ruleset>
