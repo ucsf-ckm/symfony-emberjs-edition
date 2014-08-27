@@ -18,3 +18,5 @@ parameters:
     debug_toolbar:          true
     debug_redirects:        false
     use_assetic_controller: true
+    
+    assetic.filter.emberprecompile.bin: '/usr/bin/ember-precompile'
